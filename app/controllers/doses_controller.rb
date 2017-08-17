@@ -1,13 +1,12 @@
 class DosesController < ActionController::Base
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
-    @ingredient = Ingredient.find(params[:ingredient_id])
+    @ingredients = Ingredient.all
     @dose = Dose.new
   end
 
   def create
-    @cocktail = Cocktail.find(params[:cocktail_id])
-    @ingredient = Ingredient.find(params[:ingredient_id])
+    @ingredients = Ingredient.all
     @dose = Dose.new(dose_params)
   end
 

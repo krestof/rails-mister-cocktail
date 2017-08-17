@@ -4,8 +4,12 @@
   <ul>
     <% @cocktails.each do |cocktail| %>
     <li>
-      <%= cocktail.name %>
+      <%= link_to cocktail.name, cocktail %>
     </li>
     <% end %>
   </ul>
 </div>
+
+<p> <%= link_to 'Add new cocktail', new_cocktail_path %></p>
+
+<p> <%= link_to 'Back', cocktails_path %></p>
