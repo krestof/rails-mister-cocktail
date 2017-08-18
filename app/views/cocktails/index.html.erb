@@ -1,17 +1,37 @@
-<div class="container">
-  <h1>Cocktails</h1>
 
-  <ul>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.fancyflutes.co.uk/wp-content/uploads/2016/03/banner_lounge.jpg');">
+  <div class="banner-content">
+    <h1>Happy Cocktails</h1>
+    <p>Discover, or make your own</p>
+  </div>
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#random-cocktail" id="surprise">Surprise me</button>
+  <div class="modal fade" id="random-cocktail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-cocks">
+  <div class="row">
     <% @cocktails.each do |cocktail| %>
-    <li>
+    <div class="col-xs-12 col-sm-4">
       <%= link_to cocktail.name, cocktail %>
-    </li>
+    </div>
     <% end %>
-  </ul>
+  </div>
 
-
-<p> <%= link_to 'Add new cocktail', new_cocktail_path %></p>
-
-<p> <%= link_to 'Back', cocktails_path %></p>
-
+  <p> <%= link_to 'Back', cocktails_path %></p>
 </div>

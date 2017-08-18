@@ -44,6 +44,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'figaro'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
