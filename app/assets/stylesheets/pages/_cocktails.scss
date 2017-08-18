@@ -1,4 +1,17 @@
-.container-cocks {
-  margin: 0px auto;
-  margin-top: 15px;
+.grid-sizer,
+.grid-item {
+  width: 30%;
+}
+
+.grid {
+  margin-top: 10px;
+}
+
+.grid-item {
+  float: left;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
 }

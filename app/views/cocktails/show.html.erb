@@ -11,7 +11,15 @@
 <h1>
   <%= @cocktail.name %>
 </h1>
+<% if @cocktail.photo? %>
+  <%= cl_image_tag @cocktail.photo.path, width: 200, height: 300, crop: :fill %>
+<% else %>
+  <%= cl_image_tag "qjl8gye81xgimbzekn5n", width: 200, height: 300, crop: :fill %>
+<% end %>
 
+  <%= simple_form_for [@cocktail] do |f| %>
+    <%= f.input :photo, as: :attachinary %>
+  <% end %>
 <ul>
   <% @cocktail.doses.each do |dose|%>
   <li>

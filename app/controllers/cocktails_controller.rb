@@ -25,9 +25,14 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def random
+    @cocktail = Cocktail.all.sample
+    redirect_to @cocktail
+  end
+
   private
 
   def cocktails_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end

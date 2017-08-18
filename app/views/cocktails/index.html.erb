@@ -13,25 +13,38 @@
           <h4 class="modal-title" id="myModalLabel">Modal title</h4>
         </div>
         <div class="modal-body">
-          ...
+          <% random = @cocktails.sample %>
+          <h2>
+            <%= random.name %>
+          </h2>
+          <p>
+            <% if random.photo? %>
+          <%= cl_image_tag(random.photo.path, width: 250, height: 200, crop: :fit)%>
+        <% else %>
+          <%= cl_image_tag("qjl8gye81xgimbzekn5n", width: 250, height: 200, crop: :fit) %>
+          <% end %>
+          </p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Other cocktail</button>
+          <button type="button" class="btn btn-primary">See details</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<div class="container-cocks">
-  <div class="row">
+<div class="container">
+  <div class="grid">
+  <div class="grid-sizer"></div>
     <% @cocktails.each do |cocktail| %>
-    <div class="col-xs-12 col-sm-4">
-      <%= link_to cocktail.name, cocktail %>
-    </div>
+      <div class="grid-item">
+        <% if cocktail.photo? %>
+          <%= cl_image_tag(cocktail.photo.path, width: 200, height: 200, crop: :scale)%>
+        <% else %>
+          <%= cl_image_tag("qjl8gye81xgimbzekn5n", width: 250, height: 200, crop: :fill) %>
+        <% end %>
+      </div>
     <% end %>
   </div>
-
-  <p> <%= link_to 'Back', cocktails_path %></p>
 </div>
+
